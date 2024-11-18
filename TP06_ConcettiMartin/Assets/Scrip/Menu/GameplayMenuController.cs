@@ -6,11 +6,6 @@ using UnityEngine.SceneManagement;
 public class GameplayMenuController : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
-    private void Start()
-    {
-        AudioManager.Instance.PlayMusic("Main music");
-
-    }
 
     void Update()
     {

@@ -11,8 +11,14 @@ public class PlayerSO : ScriptableObject
     [SerializeField] private float jumpForce;
     [SerializeField] private int startJumpsAmount;
 
+
+    [Header("Player health Settings")]
+    [SerializeField] private int maxHealth;
+
     public float MovementSpeed { get => movementSpeed; set => movementSpeed = value; }
     public int StartJumpsAmount { get => startJumpsAmount; set => startJumpsAmount = value; }
     public float JumpForce { get => jumpForce; set => jumpForce = value; }
+    public int MaxHealth { get => maxHealth; set => maxHealth = value; }
+
 
 }
