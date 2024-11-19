@@ -18,20 +18,16 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
         life = data.MaxHealth;
         UpdateHealthBar(life, data.MaxHealth);
         inmune = false;
-        Debug.Log("We got life");
 
     }
     public void TakeDamage(int strength)
     {
-        Debug.Log("Is trung to take damage");
         if (inmune)
         {
-            Debug.Log("Is inmune");
 
         }
         else
         {
-            Debug.Log("Is not inmune");
 
             life -= strength;
 
