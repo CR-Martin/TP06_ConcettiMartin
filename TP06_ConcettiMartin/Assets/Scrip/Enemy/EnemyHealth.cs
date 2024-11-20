@@ -33,7 +33,7 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
         Debug.Log(health);
         if (health <= 0)
         {
-            Instantiate(deadParticles, transform.position, Quaternion.identity);
+            //Instantiate(deadParticles, transform.position, Quaternion.identity);
             AudioManager.Instance.PlayEffect("Explosion");
             Destroy(gameObject);
         }
