@@ -8,20 +8,21 @@ using System;
 public class PlayerHealth : MonoBehaviour, ITakeDamage
 {
     [SerializeField] private PlayerSO data;
-    [SerializeField] private Slider lifeBar;
+    [SerializeField] private Slider healthBar;
 
-    private int life;
+    private int health;
     private bool inmune;
 
     void Start()
     {
-        life = data.MaxHealth;
-        UpdateHealthBar(life, data.MaxHealth);
+        health = data.MaxHealth;
+        UpdateHealthBar(health, data.MaxHealth);
         inmune = false;
 
     }
     public void TakeDamage(int strength)
     {
+
         if (inmune)
         {
 
@@ -29,27 +30,41 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
         else
         {
 
-            life -= strength;
+            health -= strength;
+            Debug.Log(health);
 
-            if (life <= 0)
+            if (health <= 0)
             {
                 //AudioManager.Instance.PlayEffect("Game Over");
                 //OnGameOver?.Invoke();
             }
 
-            UpdateHealthBar(life, data.MaxHealth);
+            UpdateHealthBar(health, data.MaxHealth);
 
             StartCoroutine(InmunityTimer());
         }
     }
 
-    private void UpdateHealthBar(int currentLife, int maxHealth)
+    private void UpdateHealthBar(int currentHealth, int maxHealth)
     {
-        float temp1 = currentLife;
+        float temp1 = currentHealth;
         float temp2 = maxHealth;
-        lifeBar.value = temp1 / temp2;
+        healthBar.value = temp1 / temp2;
 
     }
+
+    public bool IsHealthFull()
+    {
+        if (health == data.MaxHealth)
+        {
+            return true;
+        }
+        else
+        {
+            return false;    
+        }
+    }
+
     IEnumerator InmunityTimer()
     {
         inmune = true;

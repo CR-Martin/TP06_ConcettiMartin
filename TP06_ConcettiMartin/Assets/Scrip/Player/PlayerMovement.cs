@@ -13,20 +13,23 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Vector2 collisionBoxSize;
     [SerializeField] private float jumpDelayTime = 0.7f;
 
-    private Rigidbody2D _rigidbody2D;
-    private int _maxJumps;
-    private int _currentJumps = 0;
-    private bool _isGrounded;
-    private bool _canJump = true;
-    private float _horizontalMovement;
+    private Rigidbody2D rigidbody2D;
+    private int maxJumps;
+    private int currentJumps = 0;
+    private bool isGrounded;
+    private bool canJump = true;
+    private float horizontalMovement;
     private const float NormalSpeed = 1.0f;
     private const float AirSpeedModifier = 0.5f;
-    private float _jumpTimer = 0;
-    private bool _isFalling = false;
+    private float jumpTimer = 0;
+    private bool isFalling = false;
+
+    private bool facingRight = true;
+
     private void Start()
     {
-        _rigidbody2D = GetComponent<Rigidbody2D>();
-        _maxJumps = entityData.StartJumpsAmount;
+        rigidbody2D = GetComponent<Rigidbody2D>();
+        maxJumps = entityData.StartJumpsAmount;
     }
 
     private void FixedUpdate()
@@ -42,59 +45,75 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        _horizontalMovement = Input.GetAxis("Horizontal");
-        _horizontalMovement *= _isGrounded ? NormalSpeed : AirSpeedModifier;
+        horizontalMovement = Input.GetAxis("Horizontal");
+        horizontalMovement *= isGrounded ? NormalSpeed : AirSpeedModifier;
 
-       
 
-        Vector2 speed = new Vector2(_horizontalMovement * (entityData.MovementSpeed), _rigidbody2D.velocity.y);
-        _rigidbody2D.velocity = speed;
+        if (horizontalMovement > 0)
+        {
+            Flip();
+        }
+        else if (horizontalMovement < 0)
+        {
+            Flip();
+        }
+
+        Vector2 speed = new Vector2(horizontalMovement * (entityData.MovementSpeed), rigidbody2D.velocity.y);
+        rigidbody2D.velocity = speed;
     }
 
+    private void Flip()
+    {
+        if ((horizontalMovement < 0 && facingRight) || (horizontalMovement > 0 && !facingRight))
+        {
+            facingRight = !facingRight;
+            transform.Rotate(new Vector3(0, 180, 0));
+        }
+    }
 
     private void JumpDelay()
     {
-        if (!_canJump)
+        if (!canJump)
         {
-            _jumpTimer += Time.deltaTime;
+            jumpTimer += Time.deltaTime;
 
-            if (_jumpTimer >= jumpDelayTime)
+            if (jumpTimer >= jumpDelayTime)
             {
-                _canJump = true;
+                canJump = true;
             }
         }
     }
     private void JumpHandler()
     {
         JumpDelay();
-        if (_rigidbody2D.velocity.y <= 0)
+        if (rigidbody2D.velocity.y <= 0)
         {
-            _isFalling = true;
+            isFalling = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && _canJump && _currentJumps < _maxJumps)
+        if (Input.GetKeyDown(KeyCode.Space) && canJump && currentJumps < maxJumps)
         {
-            _currentJumps++;
-            _canJump = false;
-            _jumpTimer = 0;
-            _isFalling = false;
+            currentJumps++;
+            canJump = false;
+            jumpTimer = 0;
+            isFalling = false;
             Jump();
         }
 
     }
     private void Jump()
     {
-        _rigidbody2D.AddForce(Vector2.up * entityData.JumpForce, ForceMode2D.Impulse);
+        rigidbody2D.AddForce(Vector2.up * entityData.JumpForce, ForceMode2D.Impulse);
     }
 
     private void CheckGrounded()
     {
         Collider2D hit = Physics2D.OverlapBox(feetPosition.position, collisionBoxSize, 0, jumpLayer);
-        _isGrounded = hit != null;
+        isGrounded = hit != null;
 
-        if (_isGrounded && _isFalling)
+        if (isGrounded && isFalling)
         {
-            _currentJumps = 0;
+            currentJumps = 0;
         }
     }
 
@@ -106,12 +125,12 @@ public class PlayerMovement : MonoBehaviour
 
     public int GetMaxJumps()
     {
-        return _maxJumps;
+        return maxJumps;
     }
 
     public void SetMaxJumps(int value)
     {
-        this._maxJumps = value;
+        this.maxJumps = value;
     }
 
 }
