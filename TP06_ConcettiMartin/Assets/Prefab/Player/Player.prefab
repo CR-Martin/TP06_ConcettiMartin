@@ -310,8 +310,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdecb8b40dacf5a4e870511814cf79b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityData: {fileID: 0}
   firePoint: {fileID: 3502710553544922396}
   bulletPrefab: {fileID: 2353024848593118588, guid: 2393b635cbe37bb4b8c1cb95caefb19f, type: 3}
+  superBulletPrefab: {fileID: 2353024848593118588, guid: bed4887c5cc4c7c4c99ab47195c4d628, type: 3}
+  megaBulletPrefab: {fileID: 2353024848593118588, guid: d69c7ac7244ab1542874d722fe325adb, type: 3}
+  powerLevel: 1
 --- !u!50 &8077753895513279572
 Rigidbody2D:
   serializedVersion: 4
