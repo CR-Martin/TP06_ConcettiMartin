@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 1445826951522160016}
   - component: {fileID: 8077753895513279572}
   - component: {fileID: 6144906638033541554}
+  - component: {fileID: 8476278469549110558}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -310,12 +311,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdecb8b40dacf5a4e870511814cf79b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityData: {fileID: 0}
+  entityData: {fileID: 11400000, guid: e9e664eae121bca4d99b16b6a83b03d3, type: 2}
   firePoint: {fileID: 3502710553544922396}
   bulletPrefab: {fileID: 2353024848593118588, guid: 2393b635cbe37bb4b8c1cb95caefb19f, type: 3}
   superBulletPrefab: {fileID: 2353024848593118588, guid: bed4887c5cc4c7c4c99ab47195c4d628, type: 3}
   megaBulletPrefab: {fileID: 2353024848593118588, guid: d69c7ac7244ab1542874d722fe325adb, type: 3}
-  powerLevel: 1
 --- !u!50 &8077753895513279572
 Rigidbody2D:
   serializedVersion: 4
@@ -378,6 +378,27 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.84210527, y: 1}
   m_Direction: 0
+--- !u!95 &8476278469549110558
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7191637652327077826}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f8aa961347a3af044b093b6455af9450, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8329053100668635961
 GameObject:
   m_ObjectHideFlags: 0
