@@ -148,9 +148,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 193
+        y: 192
         width: 64
-        height: 63
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 8, y: 7, z: 8, w: 8}
@@ -160,6 +160,27 @@ TextureImporter:
       bones: []
       spriteID: b7068242be02eac4d957d497adde68cc
       internalID: 426665055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 14 Border 01_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1597eaa9db9ce8f4fb86eda0159944b8
+      internalID: -1061109438
       vertices: []
       indices: 
       edges: []
@@ -177,6 +198,7 @@ TextureImporter:
     nameFileIdTable:
       14 Border 01_0: 1737853751
       14 Border 01_1: 426665055
+      14 Border 01_2: -1061109438
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
