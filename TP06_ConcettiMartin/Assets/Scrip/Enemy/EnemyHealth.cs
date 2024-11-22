@@ -27,14 +27,14 @@ public class EnemyHealth : MonoBehaviour, ITakeDamage
 
     public void TakeDamage(int strength)
     {
-        AudioManager.Instance.PlayEffect("Hurt");
+        AudioManager.Instance.PlayEffect("Enemy hurt");
 
         health -= strength;
         Debug.Log(health);
         if (health <= 0)
         {
-            //Instantiate(deadParticles, transform.position, Quaternion.identity);
-            AudioManager.Instance.PlayEffect("Explosion");
+            Instantiate(deadParticles, transform.position, Quaternion.identity);
+            AudioManager.Instance.PlayEffect("Enemy explosion");
             Destroy(gameObject);
         }
         UpdateHealthBar(health, data.MaxHealth);

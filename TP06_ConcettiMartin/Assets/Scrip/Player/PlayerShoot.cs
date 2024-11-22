@@ -13,28 +13,33 @@ public class PlayerShoot : MonoBehaviour, IGetPower
 
     private int powerLevel;
     private bool isAttacking = false;
+    private float fireRate;
+    private bool canFire;
+    private float fireTime = 0;
 
     private void Start()
     {
         powerLevel = entityData.InitialPowerLevel;
+        fireRate=entityData.FireRate;
+        canFire = true;
     }
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Shoot();
-            isAttacking = true;
-            Debug.Log(isAttacking);
-        }
-        else
-        {
-            //isAttacking = false;
+            if (canFire == true) 
+            {
+                Shoot();
+                isAttacking = true;
+                StartCoroutine(FireTimer());
+            }
+
         }
     }
 
     void Shoot()
     {
-        if (Time.timeScale == 1f)
+        if (Time.timeScale == 1f )
         {
             AudioManager.Instance.PlayEffect("Weapon sounds");
             SelectBullet();
@@ -76,5 +81,12 @@ public class PlayerShoot : MonoBehaviour, IGetPower
     public void SetAttackToFalse()
     {
         isAttacking = false;
+    }
+
+    IEnumerator FireTimer()
+    {
+        canFire = false;  
+        yield return new WaitForSeconds(fireRate);
+        canFire = true;
     }
 }

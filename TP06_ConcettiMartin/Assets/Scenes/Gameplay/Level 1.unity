@@ -2361,11 +2361,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1136085341466389768, guid: a2a4ce1bf4b74a04c843bc5b413622c1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4765761168089619695, guid: a2a4ce1bf4b74a04c843bc5b413622c1, type: 3}
+      propertyPath: deadParticles
+      value: 
+      objectReference: {fileID: 7272329028880382136, guid: 951184a13240a3d49a484f1fb5f0e35a, type: 3}
     - target: {fileID: 7875845162615647707, guid: a2a4ce1bf4b74a04c843bc5b413622c1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8989647412441714860, guid: a2a4ce1bf4b74a04c843bc5b413622c1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2566,23 +2570,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
       propertyPath: effectSounds.Array.size
-      value: 3
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
-      propertyPath: effectSounds.Array.data[1].clip
+      propertyPath: effectSounds.Array.data[3].clip
       value: 
-      objectReference: {fileID: 8300000, guid: f1865125434085541af5793c662d8927, type: 3}
+      objectReference: {fileID: 8300000, guid: 4db5230af43dd2b44817a2394607349e, type: 3}
     - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
-      propertyPath: effectSounds.Array.data[2].clip
+      propertyPath: effectSounds.Array.data[4].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 82d13cc3fbcd6544bae6d2f84775f4cc, type: 3}
+      objectReference: {fileID: 8300000, guid: 3f6685e262950ce428349df83311e33c, type: 3}
     - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
-      propertyPath: effectSounds.Array.data[1].soundName
-      value: Player walking
+      propertyPath: effectSounds.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1965df086520e9d4d9e23639c4112556, type: 3}
+    - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
+      propertyPath: effectSounds.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 65ca2f8d308778549b669587fdcf01fa, type: 3}
+    - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
+      propertyPath: effectSounds.Array.data[7].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 392c6adc8b0828f4984c8de49e99c30c, type: 3}
+    - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
+      propertyPath: effectSounds.Array.data[8].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7192cb4baa52bcb408e4cfea0113ca44, type: 3}
+    - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
+      propertyPath: effectSounds.Array.data[3].soundName
+      value: Enemy hurt
       objectReference: {fileID: 0}
     - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
-      propertyPath: effectSounds.Array.data[2].soundName
-      value: Jump
+      propertyPath: effectSounds.Array.data[4].soundName
+      value: Enemy explosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
+      propertyPath: effectSounds.Array.data[5].soundName
+      value: Power up
+      objectReference: {fileID: 0}
+    - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
+      propertyPath: effectSounds.Array.data[6].soundName
+      value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
+      propertyPath: effectSounds.Array.data[7].soundName
+      value: Player dead
+      objectReference: {fileID: 0}
+    - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
+      propertyPath: effectSounds.Array.data[8].soundName
+      value: Player hurt
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

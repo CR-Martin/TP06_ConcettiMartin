@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: Mega Bullet Data
   m_EditorClassIdentifier: 
   strength: 3
-  fireRate: 3
   velocity: 2
-  lifeTime: 3
-  range: 3
+  lifeTime: 4

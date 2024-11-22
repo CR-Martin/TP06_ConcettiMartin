@@ -53,6 +53,10 @@ MonoBehaviour:
   effectSounds:
   - soundName: Weapon sounds
     clip: {fileID: 8300000, guid: 28840b191aad5cd4ab76450a199633f0, type: 3}
+  - soundName: Player walking
+    clip: {fileID: 8300000, guid: f1865125434085541af5793c662d8927, type: 3}
+  - soundName: Jump
+    clip: {fileID: 8300000, guid: 82d13cc3fbcd6544bae6d2f84775f4cc, type: 3}
   uiSounds:
   - soundName: Click
     clip: {fileID: 8300000, guid: e7007f694682d364db1a0ce0706d84f0, type: 3}

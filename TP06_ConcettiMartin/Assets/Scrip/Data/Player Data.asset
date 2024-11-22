@@ -22,3 +22,4 @@ MonoBehaviour:
   maxHealth: 3
   inmunityTimer: 2
   initialPowerLevel: 1
+  fireRate: 2

@@ -8,16 +8,21 @@ public class Bullet : MonoBehaviour
     private float velocity;
     private Rigidbody2D rb;
     private int strength;
+    private float lifeTime;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         velocity = data.Velocity;
         strength = data.Strength;
+        lifeTime= data.LifeTime;
     }
+
     void Start()
     {
         rb.velocity = transform.right * velocity;
+        StartCoroutine(LifeTimer());
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -25,7 +30,6 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.tag != "Player")
         {
             ITakeDamage hit = collision.gameObject.GetComponent<ITakeDamage>();
-            Debug.Log(hit);
             if (hit != null)
             {
                 hit.TakeDamage(strength);
@@ -38,8 +42,12 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
 
             }
-        }
-            
+        }           
     }
 
+    IEnumerator LifeTimer()
+    {
+        yield return new WaitForSeconds(lifeTime);
+        Destroy(gameObject);
+    }
 }

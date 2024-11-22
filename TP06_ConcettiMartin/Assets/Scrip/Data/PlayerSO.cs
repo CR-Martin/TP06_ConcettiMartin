@@ -23,6 +23,9 @@ public class PlayerSO : ScriptableObject
     [Header("Player power Settings")]
     [SerializeField] private int initialPowerLevel;
 
+    [Header("Player power Settings")]
+    [SerializeField] private float fireRate;
+
     public float MovementSpeed { get => movementSpeed; set => movementSpeed = value; }
     public float MovementEffectDelay { get => movementEffectDelay; set => movementEffectDelay = value; }
     public int StartJumpsAmount { get => startJumpsAmount; set => startJumpsAmount = value; }
@@ -33,5 +36,8 @@ public class PlayerSO : ScriptableObject
     public float JumpDelayTime { get => jumpDelayTime; set => jumpDelayTime = value; }
     public float NormalSpeed { get => normalSpeed; set => normalSpeed = value; }
     public float AirSpeedModifier { get => airSpeedModifier; set => airSpeedModifier = value; }
+
+    public float FireRate { get => fireRate; set => fireRate = value; }
+
 
 }

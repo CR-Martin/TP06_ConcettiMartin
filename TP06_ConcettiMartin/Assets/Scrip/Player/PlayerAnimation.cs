@@ -39,7 +39,7 @@ public class PlayerAnimation : MonoBehaviour
     private void SetAttackingAnimation()
     {
         isAttacking = playerShoot.GetIsAttacking();
-        Debug.Log("IS attacking is: " + isAttacking);
+       
         animator.SetBool("IsAttacking", isAttacking);
 
 
