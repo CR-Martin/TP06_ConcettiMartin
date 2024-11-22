@@ -2289,9 +2289,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton
       objectReference: {fileID: 0}
+    - target: {fileID: 1136085341466389768, guid: a2a4ce1bf4b74a04c843bc5b413622c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7875845162615647707, guid: a2a4ce1bf4b74a04c843bc5b413622c1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8989647412441714860, guid: a2a4ce1bf4b74a04c843bc5b413622c1, type: 3}
       propertyPath: m_LocalPosition.x

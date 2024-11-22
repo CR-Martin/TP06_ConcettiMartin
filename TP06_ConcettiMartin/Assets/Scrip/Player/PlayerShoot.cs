@@ -12,6 +12,7 @@ public class PlayerShoot : MonoBehaviour, IGetPower
     [SerializeField] private GameObject megaBulletPrefab;
     
     private int powerLevel;
+    private bool isAttacking = false;
 
     private void Start()
     {
@@ -22,6 +23,12 @@ public class PlayerShoot : MonoBehaviour, IGetPower
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
+            isAttacking = true;
+            Debug.Log(isAttacking);
+        }
+        else
+        {
+            isAttacking = false;
         }
     }
 
@@ -32,7 +39,6 @@ public class PlayerShoot : MonoBehaviour, IGetPower
             AudioManager.Instance.PlayEffect("Shooting");
             SelectBullet();
         }
-
     }
 
     void SelectBullet()
@@ -60,5 +66,10 @@ public class PlayerShoot : MonoBehaviour, IGetPower
     {
         powerLevel++;
         Debug.Log(powerLevel);
+    }
+
+    public bool GetIsAttacking()
+    {
+        return isAttacking;
     }
 }
