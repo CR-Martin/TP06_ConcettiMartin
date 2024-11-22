@@ -50,8 +50,16 @@ MonoBehaviour:
   musicSounds:
   - soundName: Main music
     clip: {fileID: 8300000, guid: 3a5858c0a2b158f41948519d4b2a0f3b, type: 3}
-  effectSounds: []
-  uiSounds: []
+  effectSounds:
+  - soundName: Weapon sounds
+    clip: {fileID: 8300000, guid: 28840b191aad5cd4ab76450a199633f0, type: 3}
+  uiSounds:
+  - soundName: Click
+    clip: {fileID: 8300000, guid: e7007f694682d364db1a0ce0706d84f0, type: 3}
+  - soundName: Hover
+    clip: {fileID: 8300000, guid: ab7710b27537e514ab342212dad25588, type: 3}
+  - soundName: Pause
+    clip: {fileID: 8300000, guid: ee7571d6c8ae2e446acdd95a791fd809, type: 3}
   audioMixer: {fileID: 24100000, guid: 41ebb37ed51bb544ea144a644be7c34d, type: 2}
   musicSource: {fileID: 5150455772596702515}
   effectSource: {fileID: 5749866376142296937}

@@ -11,7 +11,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask jumpLayer;
     [SerializeField] private Transform feetPosition;
     [SerializeField] private Vector2 collisionBoxSize;
-    [SerializeField] private float jumpDelayTime = 0.7f;
+    [SerializeField] private float jumpDelayTime ;
+    [SerializeField] private float NormalSpeed ;
+    [SerializeField] private float AirSpeedModifier ;
 
     private Rigidbody2D rigidbody2D;
     private int maxJumps;
@@ -19,9 +21,11 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     private bool canJump = true;
     private float horizontalMovement;
-    private const float NormalSpeed = 1.0f;
-    private const float AirSpeedModifier = 0.5f;
+    private float movementEffectDelay;
+
     private float jumpTimer = 0;
+    private float movementEffectTimer = 0;
+
     private bool isFalling = false;
 
     private bool facingRight = true;
@@ -30,6 +34,11 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         maxJumps = entityData.StartJumpsAmount;
+        jumpDelayTime = entityData.JumpDelayTime;
+        NormalSpeed = entityData.NormalSpeed;
+        AirSpeedModifier = entityData.AirSpeedModifier;
+        movementEffectDelay = entityData.MovementEffectDelay;
+
     }
 
     private void FixedUpdate()
@@ -57,7 +66,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Flip();
         }
-
+        if (horizontalMovement != 0)
+        {
+            WalkingEffectDelay();
+        }
         Vector2 speed = new Vector2(horizontalMovement * (entityData.MovementSpeed), rigidbody2D.velocity.y);
         rigidbody2D.velocity = speed;
     }
@@ -68,6 +80,18 @@ public class PlayerMovement : MonoBehaviour
         {
             facingRight = !facingRight;
             transform.Rotate(new Vector3(0, 180, 0));
+        }
+    }
+
+    private void WalkingEffectDelay()
+    {
+        movementEffectTimer += Time.deltaTime;
+
+        if (movementEffectTimer >= movementEffectDelay)
+        {
+            AudioManager.Instance.PlayEffect("Player walking");
+
+            movementEffectTimer = 0;
         }
     }
 
@@ -104,6 +128,8 @@ public class PlayerMovement : MonoBehaviour
     private void Jump()
     {
         rigidbody2D.AddForce(Vector2.up * entityData.JumpForce, ForceMode2D.Impulse);
+        AudioManager.Instance.PlayEffect("Jump");
+
     }
 
     private void CheckGrounded()

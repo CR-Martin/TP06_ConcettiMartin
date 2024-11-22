@@ -36,7 +36,7 @@ public class PlayerShoot : MonoBehaviour, IGetPower
     {
         if (Time.timeScale == 1f)
         {
-            AudioManager.Instance.PlayEffect("Shooting");
+            AudioManager.Instance.PlayEffect("Weapon sounds");
             SelectBullet();
         }
     }

@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 9122902733813530343}
   - component: {fileID: 7153395558509505677}
   - component: {fileID: 1445826951522160016}
+  - component: {fileID: 1836961700808999674}
   - component: {fileID: 8077753895513279572}
   - component: {fileID: 6144906638033541554}
   - component: {fileID: 8476278469549110558}
@@ -285,6 +286,8 @@ MonoBehaviour:
   feetPosition: {fileID: 7515090111378068049}
   collisionBoxSize: {x: 1, y: 1}
   jumpDelayTime: 0.7
+  NormalSpeed: 0
+  AirSpeedModifier: 0
 --- !u!114 &7153395558509505677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,6 +319,18 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2353024848593118588, guid: 2393b635cbe37bb4b8c1cb95caefb19f, type: 3}
   superBulletPrefab: {fileID: 2353024848593118588, guid: bed4887c5cc4c7c4c99ab47195c4d628, type: 3}
   megaBulletPrefab: {fileID: 2353024848593118588, guid: d69c7ac7244ab1542874d722fe325adb, type: 3}
+--- !u!114 &1836961700808999674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7191637652327077826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a4ff07453869d4190d9f5f559ddabd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &8077753895513279572
 Rigidbody2D:
   serializedVersion: 4

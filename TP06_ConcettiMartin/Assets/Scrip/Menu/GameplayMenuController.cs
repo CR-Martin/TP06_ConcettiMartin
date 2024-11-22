@@ -68,7 +68,12 @@ public class GameplayMenuController : MonoBehaviour
 
     public void Click()
     {
-        AudioManager.Instance.PlayEffect("Click");
+        AudioManager.Instance.PlayUI("Click");
+
+    }
+    public void Hover()
+    {
+        AudioManager.Instance.PlayUI("Hover");
 
     }
 }

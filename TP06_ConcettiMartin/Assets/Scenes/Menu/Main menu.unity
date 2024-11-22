@@ -3852,56 +3852,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
-      propertyPath: uiSounds.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
       propertyPath: musicSounds.Array.size
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
-      propertyPath: effectSounds.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
-      propertyPath: uiSounds.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: e7007f694682d364db1a0ce0706d84f0, type: 3}
-    - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
-      propertyPath: uiSounds.Array.data[1].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: ab7710b27537e514ab342212dad25588, type: 3}
-    - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
-      propertyPath: uiSounds.Array.data[2].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: ee7571d6c8ae2e446acdd95a791fd809, type: 3}
     - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
       propertyPath: musicSounds.Array.data[1].clip
       value: 
       objectReference: {fileID: 8300000, guid: 3a5858c0a2b158f41948519d4b2a0f3b, type: 3}
     - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
-      propertyPath: effectSounds.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: e7007f694682d364db1a0ce0706d84f0, type: 3}
-    - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
-      propertyPath: uiSounds.Array.data[0].soundName
-      value: Click
-      objectReference: {fileID: 0}
-    - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
-      propertyPath: uiSounds.Array.data[1].soundName
-      value: Hover
-      objectReference: {fileID: 0}
-    - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
-      propertyPath: uiSounds.Array.data[2].soundName
-      value: Pause
-      objectReference: {fileID: 0}
-    - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
       propertyPath: musicSounds.Array.data[1].soundName
       value: Main music
-      objectReference: {fileID: 0}
-    - target: {fileID: 4195715248691283985, guid: c8c94b30eabea0f428567984431fe243, type: 3}
-      propertyPath: effectSounds.Array.data[0].soundName
-      value: Click
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
