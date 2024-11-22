@@ -94,18 +94,18 @@ public class MainMenuController : MonoBehaviour
     public void SetUIVolume(float value)
     {
         PlayerPrefs.SetFloat(uiVolumePref, value);
-        AudioManager.Instance.SfxVolume(PlayerPrefs.GetFloat(uiVolumePref));
+        AudioManager.Instance.UIVolume(PlayerPrefs.GetFloat(uiVolumePref));
     }
 
     public void Click()
     {
-        AudioManager.Instance.PlayUI("test");
+        AudioManager.Instance.PlayUI("Click");
 
     }
 
     public void Hover()
     {
-        AudioManager.Instance.PlayEffect("Hover");
+        AudioManager.Instance.PlayUI("Hover");
 
     }
 }
