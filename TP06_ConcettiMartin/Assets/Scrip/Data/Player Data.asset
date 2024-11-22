@@ -20,4 +20,5 @@ MonoBehaviour:
   normalSpeed: 1
   airSpeedModifier: 0.5
   maxHealth: 3
+  inmunityTimer: 2
   initialPowerLevel: 1

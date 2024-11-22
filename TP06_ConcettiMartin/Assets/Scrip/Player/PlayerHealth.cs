@@ -11,11 +11,13 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
     [SerializeField] private Slider healthBar;
 
     private int health;
+    private int inmunityTimer;
     private bool inmune;
 
     void Start()
     {
         health = data.MaxHealth;
+        inmunityTimer=data.InmunityTimer;
         UpdateHealthBar(health, data.MaxHealth);
         inmune = false;
 
@@ -68,7 +70,7 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
     IEnumerator InmunityTimer()
     {
         inmune = true;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(inmunityTimer);
         inmune = false;
 
     }

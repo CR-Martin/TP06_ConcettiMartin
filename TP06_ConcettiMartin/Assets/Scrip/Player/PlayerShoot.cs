@@ -10,7 +10,7 @@ public class PlayerShoot : MonoBehaviour, IGetPower
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private GameObject superBulletPrefab;
     [SerializeField] private GameObject megaBulletPrefab;
-    
+
     private int powerLevel;
     private bool isAttacking = false;
 
@@ -28,7 +28,7 @@ public class PlayerShoot : MonoBehaviour, IGetPower
         }
         else
         {
-            isAttacking = false;
+            //isAttacking = false;
         }
     }
 
@@ -71,5 +71,10 @@ public class PlayerShoot : MonoBehaviour, IGetPower
     public bool GetIsAttacking()
     {
         return isAttacking;
+    }
+
+    public void SetAttackToFalse()
+    {
+        isAttacking = false;
     }
 }
