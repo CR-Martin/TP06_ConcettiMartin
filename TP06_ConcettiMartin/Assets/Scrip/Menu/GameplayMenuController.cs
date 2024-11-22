@@ -17,6 +17,7 @@ public class GameplayMenuController : MonoBehaviour
     [SerializeField] private string uiVolumePref = "uiVolume";
 
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject winMenu;
 
     private void Awake()
     {
@@ -42,7 +43,18 @@ public class GameplayMenuController : MonoBehaviour
         sfxVolume.onValueChanged.AddListener(SetSFXVolume);
         uiVolume.onValueChanged.AddListener(SetUIVolume);
     }
+    private void OnEnable()
+    {
+        GameManager.ActivateWinGame += WinGame;
+        GameManager.ActivateGameOver += GameOver;
 
+    }
+    private void OnDisable()
+    {
+        GameManager.ActivateWinGame -= WinGame;
+        GameManager.ActivateGameOver -= GameOver;
+
+    }
     private void Start()
     {
         AudioManager.Instance.PlayMusic("Main music");
@@ -82,7 +94,14 @@ public class GameplayMenuController : MonoBehaviour
     private void WinGame()
     {
         SetTimeToZero();
-        //winMenu.SetActive(true);
+        winMenu.SetActive(true);
+    }
+
+    public void RelaodLevel()
+    {
+        SetTimeToOne();
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
     }
 
     public void ChangeScene(string name)

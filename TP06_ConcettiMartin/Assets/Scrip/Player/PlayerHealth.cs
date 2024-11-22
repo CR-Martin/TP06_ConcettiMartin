@@ -7,6 +7,8 @@ using System;
 
 public class PlayerHealth : MonoBehaviour, ITakeDamage
 {
+    public static event Action OnGameOver;
+
     [SerializeField] private PlayerSO data;
     [SerializeField] private Slider healthBar;
 
@@ -38,7 +40,7 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
             if (health <= 0)
             {
                 //AudioManager.Instance.PlayEffect("Game Over");
-                //OnGameOver?.Invoke();
+                OnGameOver?.Invoke();
             }
 
             UpdateHealthBar(health, data.MaxHealth);
