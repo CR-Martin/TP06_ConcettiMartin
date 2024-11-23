@@ -18,6 +18,7 @@ public class GameplayMenuController : MonoBehaviour
 
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject winMenu;
+    [SerializeField] GameObject gameOverMenu;
 
     private void Awake()
     {
@@ -88,7 +89,7 @@ public class GameplayMenuController : MonoBehaviour
     private void GameOver()
     {
         SetTimeToZero();
-       // gameOverMenu.SetActive(true);
+       gameOverMenu.SetActive(true);
 
     }
     private void WinGame()
