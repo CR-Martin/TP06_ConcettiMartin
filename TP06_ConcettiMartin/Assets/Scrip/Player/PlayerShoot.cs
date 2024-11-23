@@ -70,7 +70,6 @@ public class PlayerShoot : MonoBehaviour, IGetPower
     public void IncreasePower()
     {
         powerLevel++;
-        Debug.Log(powerLevel);
     }
 
     public bool GetIsAttacking()

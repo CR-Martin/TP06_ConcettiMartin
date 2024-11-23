@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 3
   movementEffectDelay: 0.5
-  jumpForce: 5
+  jumpForce: 8
   startJumpsAmount: 1
   jumpDelayTime: 0.7
   normalSpeed: 1
   airSpeedModifier: 0.5
   maxHealth: 3
   inmunityTimer: 2
+  longInmunityTimer: 0
   initialPowerLevel: 1
   fireRate: 2

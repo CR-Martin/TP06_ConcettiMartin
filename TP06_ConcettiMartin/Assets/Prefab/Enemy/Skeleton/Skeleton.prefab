@@ -190,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 096f875d58cbf7e43a92c548cdcf4674, type: 2}
   healthBar: {fileID: 2451988255668131234}
-  deadParticles: {fileID: 0}
+  deadParticles: {fileID: 7272329028880382136, guid: 951184a13240a3d49a484f1fb5f0e35a, type: 3}
 --- !u!61 &2126324708466114268
 BoxCollider2D:
   m_ObjectHideFlags: 0
