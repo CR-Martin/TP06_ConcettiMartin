@@ -19,6 +19,7 @@ public class PlayerSO : ScriptableObject
     [Header("Player health Settings")]
     [SerializeField] private int maxHealth;
     [SerializeField] private int inmunityTimer;
+    [SerializeField] private int longInmunityTimer;
 
     [Header("Player power Settings")]
     [SerializeField] private int initialPowerLevel;
@@ -32,6 +33,7 @@ public class PlayerSO : ScriptableObject
     public float JumpForce { get => jumpForce; set => jumpForce = value; }
     public int MaxHealth { get => maxHealth; set => maxHealth = value; }
     public int InmunityTimer { get => inmunityTimer; set => inmunityTimer = value; }
+    public int LongInmunityTimer { get => longInmunityTimer; set => longInmunityTimer = value; }
     public int InitialPowerLevel { get => initialPowerLevel; set => initialPowerLevel = value; }
     public float JumpDelayTime { get => jumpDelayTime; set => jumpDelayTime = value; }
     public float NormalSpeed { get => normalSpeed; set => normalSpeed = value; }

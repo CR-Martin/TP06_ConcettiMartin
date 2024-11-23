@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpPickable : MonoBehaviour
+public class Inmunity : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            IGetPower hit = other.gameObject.GetComponent<IGetPower>();
+            IInmunity hit = other.gameObject.GetComponent<IInmunity>();
 
             if (hit != null)
             {
                 AudioManager.Instance.PlayEffect("Power up");
-                hit.IncreasePower();
+                hit.Inmunity();
                 Destroy(gameObject);
             }
         }

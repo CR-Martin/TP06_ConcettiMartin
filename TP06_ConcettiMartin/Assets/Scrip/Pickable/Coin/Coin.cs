@@ -8,6 +8,7 @@ public class Coin : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            AudioManager.Instance.PlayEffect("Coin");
             HighScoreCounter.instance.IncreaseHighScore(1);
             Destroy(gameObject);
         }

@@ -5,24 +5,25 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class PlayerHealth : MonoBehaviour, ITakeDamage
+public class PlayerHealth : MonoBehaviour, ITakeDamage, IInmunity
 {
     public static event Action OnGameOver;
 
     [SerializeField] private PlayerSO data;
     [SerializeField] private Slider healthBar;
+    [SerializeField] private GameObject shield;
 
     private int health;
     private int inmunityTimer;
+    private int longInmunityTimer;
     private bool inmune;
 
     void Start()
     {
         health = data.MaxHealth;
-        inmunityTimer=data.InmunityTimer;
+        inmunityTimer = data.InmunityTimer;
         UpdateHealthBar(health, data.MaxHealth);
         inmune = false;
-
     }
     public void TakeDamage(int strength)
     {
@@ -39,7 +40,6 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
 
             if (health <= 0)
             {
-                //AudioManager.Instance.PlayEffect("Game Over");
                 OnGameOver?.Invoke();
             }
 
@@ -65,7 +65,7 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
         }
         else
         {
-            return false;    
+            return false;
         }
     }
 
@@ -76,4 +76,21 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage
         inmune = false;
 
     }
+
+    public void Inmunity()
+    {
+        StartCoroutine(LongInmunityTimer());
+
+    }
+
+    IEnumerator LongInmunityTimer()
+    {
+        inmune = true;
+        shield.SetActive(true);
+        yield return new WaitForSeconds(longInmunityTimer);
+        shield.SetActive(false);
+        inmune = false;
+
+    }
+
 }
