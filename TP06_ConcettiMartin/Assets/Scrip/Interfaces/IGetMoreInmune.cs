@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IInmunity
+public interface IGetMoreInmune 
 {
-    void ActivateSuperInmunity();
+    void InmunityExtends();
+
 }

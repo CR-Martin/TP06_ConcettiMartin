@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class PlayerHealth : MonoBehaviour, ITakeDamage, IInmunity
+public class PlayerHealth : MonoBehaviour, ITakeDamage, IInmunity, IGetMoreInmune
 {
     public static event Action OnGameOver;
 
@@ -37,9 +37,12 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, IInmunity
         {
 
             health -= strength;
+            AudioManager.Instance.PlayEffect("Player hurt");
 
             if (health <= 0)
             {
+                AudioManager.Instance.PlayEffect("Player dead");
+
                 OnGameOver?.Invoke();
             }
 
@@ -85,6 +88,23 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, IInmunity
     public void InmunityExtends()
     {
         inmunityTimer = longInmunityTimer;
+    }
+
+    public void ActivateSuperInmunity()
+    {
+        StartCoroutine(LongInmunityTimer());
+
+    }
+
+    IEnumerator LongInmunityTimer()
+    {
+        inmune = true;
+        shield.SetActive(true);
+
+        yield return new WaitForSeconds(longInmunityTimer);
+        shield.SetActive(false);
+
+        inmune = false;
     }
 
 }
