@@ -14,7 +14,6 @@ public class HealthPickable : MonoBehaviour
 
             if (!other.gameObject.GetComponent<PlayerHealth>().IsHealthFull())
             {
-                Debug.Log("Life is not full");
 
                 ITakeDamage hit = other.gameObject.GetComponent<ITakeDamage>();
                 AudioManager.Instance.PlayEffect("Power up");

@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, IInmunity
         health = data.MaxHealth;
         inmunityTimer = data.InmunityTimer;
         UpdateHealthBar(health, data.MaxHealth);
+        longInmunityTimer = data.LongInmunityTimer;
         inmune = false;
     }
     public void TakeDamage(int strength)
@@ -36,7 +37,6 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, IInmunity
         {
 
             health -= strength;
-            Debug.Log(health);
 
             if (health <= 0)
             {
@@ -71,26 +71,20 @@ public class PlayerHealth : MonoBehaviour, ITakeDamage, IInmunity
 
     IEnumerator InmunityTimer()
     {
-        inmune = true;
-        yield return new WaitForSeconds(inmunityTimer);
-        inmune = false;
-
-    }
-
-    public void Inmunity()
-    {
-        StartCoroutine(LongInmunityTimer());
-
-    }
-
-    IEnumerator LongInmunityTimer()
-    {
+        Debug.Log("Inmune time is: " + inmunityTimer);
         inmune = true;
         shield.SetActive(true);
-        yield return new WaitForSeconds(longInmunityTimer);
+
+        yield return new WaitForSeconds(inmunityTimer);
         shield.SetActive(false);
+
         inmune = false;
 
+    }
+
+    public void InmunityExtends()
+    {
+        inmunityTimer = longInmunityTimer;
     }
 
 }

@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Door : MonoBehaviour, ITakeDamage
 {
+    [SerializeField] private DoorSO data;
+
     public void TakeDamage(int strength)
     {
-        if (strength >= 2)
+        if (strength >= data.Strength)
         {
             AudioManager.Instance.PlayEffect("Enemy explosion");
             Destroy(gameObject);
         }
-
     }
 }

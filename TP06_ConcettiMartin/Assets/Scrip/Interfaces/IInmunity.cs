@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IInmunity
 {
-    void Inmunity();
+    void InmunityExtends();
 }

@@ -13,7 +13,7 @@ public class Inmunity : MonoBehaviour
             if (hit != null)
             {
                 AudioManager.Instance.PlayEffect("Power up");
-                hit.Inmunity();
+                hit.InmunityExtends();
                 Destroy(gameObject);
             }
         }

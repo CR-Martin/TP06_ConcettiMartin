@@ -21,6 +21,6 @@ MonoBehaviour:
   airSpeedModifier: 0.5
   maxHealth: 3
   inmunityTimer: 2
-  longInmunityTimer: 0
+  longInmunityTimer: 7
   initialPowerLevel: 1
   fireRate: 2
